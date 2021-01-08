@@ -1,0 +1,28 @@
+.button {
+    width: fit-content;
+    margin: 30px auto;
+    button {
+        transition: transform 0.2s ease-in-out;
+        padding: 10px 16px;
+        background-color: rgb(0, 91, 161);
+        border: 1px solid rgb(175, 216, 248);
+        color: white;
+        border-radius: 10px;
+        &:hover {
+            cursor: pointer;
+        }
+        &:active {
+            box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.24);
+            transform: scale(0.98);
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.grid {
+    width: 1000px;
+    height: 400px;
+    margin: 30px auto;
+}
