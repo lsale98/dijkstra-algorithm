@@ -10,7 +10,14 @@
         background-color: #E03737;
     }
     &.node-wall {
-        background-color: #0C2D48;
+        animation-name: addWall;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0;
+        animation-direction: alternate;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
     }
     &.node-visited {
         animation-name: visitedAnimation;
@@ -50,6 +57,21 @@
     100% {
         transform: scale(1);
         background-color: #51DEED;
+    }
+}
+
+@keyframes addWall {
+    0% {
+        transform: scale(0.6);
+        background-color: #0C2D48;
+    }
+    50% {
+        transform: scale(1.2);
+        background-color: #0C2D48;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #0C2D48;
     }
 }
 
