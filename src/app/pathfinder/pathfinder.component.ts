@@ -15,6 +15,7 @@ export class PathfinderComponent implements OnInit {
   FINISH_NODE_COL: number = 39;
   mouseIsPressed: boolean = false;
   grid: Array<any> = [];
+  algorithmInProcess: boolean = false;
 
   constructor() { }
 
@@ -41,6 +42,7 @@ export class PathfinderComponent implements OnInit {
         document.getElementById(`node-${node.row}-${node.col}`).className = 'node node-visited';
         }, 10 * i);
     }
+   
     
   }
 
@@ -52,14 +54,18 @@ export class PathfinderComponent implements OnInit {
         document.getElementById(`node-${node.row}-${node.col}`).className = 'node node-shortest-path';
         }, 10 * i);
     }
+    setTimeout(()=>{ this.algorithmInProcess = false;}, 400);
+   
   }
 
   visualDijkstra() {
+    this.algorithmInProcess = true;    
     const startNode = this.grid[this.START_NODE_ROW][this.START_NODE_COL];
     const finishNode = this.grid[this.FINISH_NODE_ROW][this.FINISH_NODE_COL];
     const visitedNodesInOrder = dijkstra(this.grid, startNode, finishNode);
     const nodesInShortestPathOrder = getNodesInShortPathOrder(finishNode);
     this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
+  
   }
 
   handleMouseDown(row,col) {

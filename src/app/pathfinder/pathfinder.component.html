@@ -1,6 +1,6 @@
 <div class="button">
     <button (click)="visualDijkstra()">Visualize Dijkstra's Algorithm</button>
-    <button (click)="reset()">Reset Algorithm</button>
+    <button (click)="reset()" [disabled]="algorithmInProcess">Reset Algorithm</button>
 </div>
 <div class="grid">
     <div *ngFor="let row of grid">
