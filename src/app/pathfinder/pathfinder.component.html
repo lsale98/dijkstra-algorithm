@@ -4,6 +4,6 @@
 </div>
 <div class="grid">
     <div *ngFor="let row of grid">
-        <app-node *ngFor="let node of row" [col]="node.col" [row]="node.row" [isFinish]="node.isFinish" [isStart]="node.isStart" [isWall]="node.isWall" (onMouseDown)="handleMouseDown(node.row,node.col)"></app-node>
+        <app-node *ngFor="let node of row" [mouseIsPressed]="mouseIsPressed" [col]="node.col" [row]="node.row" [isFinish]="node.isFinish" [isStart]="node.isStart" [isWall]="node.isWall" (onMouseDown)="handleMouseDown(node.row,node.col)" (onMouseUp)="handleMouseUp()"></app-node>
     </div>
 </div>

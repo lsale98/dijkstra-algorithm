@@ -13,9 +13,10 @@ export class NodeComponent implements OnInit {
   @Input('isWall') isWall: boolean;
   @Input('col') col: number;
   @Input('row') row: number;
-  @Input('mouseIsPressed') mouseIsPressed: boolean;
+  @Input('mouseIsPressed') mouseIsPressed: boolean = false;
   @Output('onMouseDown') onMouseDown = new EventEmitter<any>();
-  //@Output('onMouseUp') onMouseUp = new EventEmitter<boolean>();
+  @Output('onMouseUp') onMouseUp = new EventEmitter<boolean>();
+  @Output('onMouseEnter') onMouseEnter = new EventEmitter<any>();
 
   constructor() { }
 
@@ -25,10 +26,16 @@ export class NodeComponent implements OnInit {
 
   onMDown(row, col) {
     this.onMouseDown.emit({ row, col });
+    this.mouseIsPressed = true;
   }
 
-  // onMUp(value: boolean) {
-  //   this.onMouseUp.emit(value);
-  // }
+  onMUp(value: boolean) {
+    this.onMouseUp.emit(value);
+    this.mouseIsPressed = false;
+  }
+
+  onMEnter(row, col) {
+     this.onMouseEnter.emit({ row, col });
+  }
 
 }

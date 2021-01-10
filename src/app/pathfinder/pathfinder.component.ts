@@ -68,9 +68,15 @@ export class PathfinderComponent implements OnInit {
   
   }
 
-  handleMouseDown(row,col) {
+  handleMouseDown(row, col) {
+    this.mouseIsPressed = true;
     const newGrid = this.getNewGridWithWallToggled(this.grid, row, col);
     this.grid = newGrid;
+  }
+
+
+  handleMouseUp() {
+    this.mouseIsPressed = false;
   }
 
   getInitialGrid() {
