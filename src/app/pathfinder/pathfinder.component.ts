@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { dijkstra, getNodesInShortPathOrder } from '../algorithm/Dijkstra';
 
@@ -21,6 +22,11 @@ export class PathfinderComponent implements OnInit {
     this.getInitialGrid();
   }
 
+  reset() {
+    this.grid = [];
+    this.getInitialGrid();
+  }
+
   animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder) {
 
     for (let i = 0; i <= visitedNodesInOrder.length; i++){
@@ -28,6 +34,7 @@ export class PathfinderComponent implements OnInit {
         setTimeout(() => {
           this.animateShortestPath(nodesInShortestPathOrder);
         }, 10 * i);
+        return;
       }
       setTimeout(() => {
         const node = visitedNodesInOrder[i];
@@ -47,7 +54,7 @@ export class PathfinderComponent implements OnInit {
     }
   }
 
-  VisualDijkstra() {
+  visualDijkstra() {
     const startNode = this.grid[this.START_NODE_ROW][this.START_NODE_COL];
     const finishNode = this.grid[this.FINISH_NODE_ROW][this.FINISH_NODE_COL];
     const visitedNodesInOrder = dijkstra(this.grid, startNode, finishNode);

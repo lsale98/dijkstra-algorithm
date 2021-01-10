@@ -8,6 +8,11 @@
         border: 1px solid rgb(175, 216, 248);
         color: white;
         border-radius: 10px;
+        margin: 0px 5px;
+        &:nth-child(2) {
+            background-color: white;
+            color: rgb(0, 91, 161);
+        }
         &:hover {
             cursor: pointer;
         }
