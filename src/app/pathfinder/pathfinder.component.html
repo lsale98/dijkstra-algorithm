@@ -7,3 +7,21 @@
         <app-node *ngFor="let node of row" [mouseIsPressed]="mouseIsPressed" [col]="node.col" [row]="node.row" [isFinish]="node.isFinish" [isStart]="node.isStart" [isWall]="node.isWall" (onMouseDown)="handleMouseDown(node.row,node.col)" (onMouseUp)="handleMouseUp()"></app-node>
     </div>
 </div>
+<div class="description">
+    <div class="desc-node">
+        <div class="start"></div>
+        <p>Start node</p>
+    </div>
+    <div class="desc-node">
+        <div class="finish"></div>
+        <p>Finish node</p>
+    </div>
+    <div class="desc-node">
+        <div class="wall"></div>
+        <p>Wall node</p>
+    </div>
+    <div class="desc-node">
+        <div class="path"></div>
+        <p>Path node</p>
+    </div>
+</div>

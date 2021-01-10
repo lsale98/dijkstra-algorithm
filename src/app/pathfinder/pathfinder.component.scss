@@ -32,6 +32,39 @@
 
 .grid {
     width: 1000px;
-    height: 400px;
+    height: fit-content;
     margin: 30px auto;
+}
+
+.description {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    .desc-node {
+        margin: 0px 15px;
+        display: flex;
+        align-items: center;
+        p {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        & div {
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+        .start {
+            background-color: #35DB6A;
+        }
+        .finish {
+            background-color: #E03737;
+        }
+        .wall {
+            background-color: #0C2D48;
+        }
+        .path {
+            background-color: #fffe6a;
+        }
+    }
 }
