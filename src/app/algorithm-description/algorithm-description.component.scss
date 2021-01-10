@@ -1,20 +1,40 @@
 #description {
+    transition: ease-in-out 1s;
+    transition-property: top, left, width, height, border;
     width: 60%;
     height: 500px;
     background-color: white;
-    border: 2px solid #0C2D48;
     position: absolute;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -30%);
+    border: 2px solid #0C2D48;
     border-radius: 20px;
+    &.close__help {
+        transition: ease-in-out 1s;
+        transition-property: top, left, border width, height;
+        background-color: transparent;
+        top: 3%;
+        left: 3%;
+        width: 50px;
+        height: 50px;
+        border: none;
+        .help {
+            display: flex;
+            position: relative;
+            z-index: 1000;
+        }
+        .content {
+            transition: all ease-in-out 0s;
+            opacity: 0;
+        }
+    }
     .help {
         display: none;
         width: 50px;
         height: 50px;
         border-radius: 50%;
         background-color: #0C2D48;
-        //display: flex;
         justify-content: center;
         align-items: center;
         i {
@@ -26,6 +46,7 @@
         }
     }
     .content {
+        transition: all ease-in-out 1s 1s;
         .close {
             width: 35px;
             height: 35px;

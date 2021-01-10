@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlgorithmDescriptionComponent implements OnInit {
 
+  isHelpOpen: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  closeHelp() {
+    this.isHelpOpen = false;
+  }
+
+  openHelp() {
+    this.isHelpOpen = true;
   }
 
 }

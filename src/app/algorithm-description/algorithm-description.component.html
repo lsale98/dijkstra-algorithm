@@ -1,16 +1,16 @@
-<div id="description">
-    <div class="help">
+<div id="description" [ngClass]="{'close__help': !isHelpOpen}">
+    <div class="help" (click)="openHelp()">
         <i class="fas fa-question"></i>
     </div>
     <div class="content">
-        <div class="close">
+        <div (click)="closeHelp()" class="close">
             <i class="fas fa-times"></i>
         </div>
         <div class="text">
             <h1>Pathfinder</h1>
             <h3>Dijkstra's Algorithm</h3>
             <p>
-                The goal of the program is to find the shortest path from start to finish using the Dijkstra algorithm.</p>
+                The goal of the program is to find the shortest path from start to finish using the Dijkstra's algorithm.</p>
             <h4>How to use</h4>
             <ol>
                 <li>Program initialize grid where the start and finish are set</li>
