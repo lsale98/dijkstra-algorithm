@@ -66,5 +66,11 @@
         .path {
             background-color: #fffe6a;
         }
+        .visited {
+            background-color: #51DEED;
+        }
+        .unvisited {
+            border: 2px solid rgb(175, 216, 248);
+        }
     }
 }
