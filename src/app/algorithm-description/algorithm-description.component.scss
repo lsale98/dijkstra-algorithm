@@ -1,6 +1,4 @@
 #description {
-    transition: ease-in-out 1s;
-    transition-property: top, left, width, height, border;
     width: 60%;
     height: 500px;
     background-color: white;
@@ -11,9 +9,6 @@
     border: 2px solid #0C2D48;
     border-radius: 20px;
     &.close__help {
-        transition: ease-in-out 1s;
-        transition-property: top, left, border width, height;
-        background-color: transparent;
         top: 3%;
         left: 3%;
         width: 50px;
@@ -26,7 +21,7 @@
         }
         .content {
             transition: all ease-in-out 0s;
-            opacity: 0;
+            display: none;
         }
     }
     .help {
@@ -46,7 +41,7 @@
         }
     }
     .content {
-        transition: all ease-in-out 1s 1s;
+        display: block;
         .close {
             width: 35px;
             height: 35px;
